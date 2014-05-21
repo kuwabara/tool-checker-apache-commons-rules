@@ -4,11 +4,18 @@
 
   <groupId>org.codefirst.sapid</groupId>
   <artifactId>tool-checker-apache-commons-rules</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>tool-checker-apache-commons-rules</name>
-  <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <id>sapid-beta</id>
+      <name>Sapid Beta Repository</name>
+      <url>http://www.hpcss.is.ritsumei.ac.jp/Member/kuwabara/sapid-beta/mvnrepo/</url>
+    </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,8 +25,15 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.10</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.sapid</groupId>
+      <artifactId>tool-checker</artifactId>
+      <version>0.1.2</version>
+    </dependency>
+
   </dependencies>
 </project>
