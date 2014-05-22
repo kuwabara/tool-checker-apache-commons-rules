@@ -1,0 +1,8 @@
+<configuration>
+  <message resource="org.codefirst.sapid.tool.checker.jx.rule.apache.commons.messages_apache_commons" />
+  <ruleset>
+    <rule 
+      class="org.codefirst.sapid.tool.checker.jx.rule.apache.commons.UseStringMethod"
+      enabled="true" />
+  </ruleset>
+</configuration>

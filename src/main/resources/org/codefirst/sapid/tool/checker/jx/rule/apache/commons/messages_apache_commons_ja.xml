@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messageset>
+	<rule
+		class="org.codefirst.sapid.tool.checker.jx.rule.apache.commons.UseStringMethod">
+		<name>UseStringMethod</name>
+		<message>String クラスのインスタンスメソッドは使用すべきではありません。</message>
+		<description>String クラスのインスタンスメソッドは、レシーバが null だった場合に
+			NullPointerException を引き起こす恐れがあります。代わりに、StringUtils
+			のクラスメソッドを利用してください。
+		</description>
+	</rule>
+</messageset>
+
