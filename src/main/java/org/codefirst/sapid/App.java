@@ -8,9 +8,9 @@ import org.sapid.tool.checker.jx.Main;
 public class App {
     public static void main(String[] args) {
         System.out.println("start");
-        Main.main(new String[] { "-v", "-sdb:target/SDB",
+        Main.main(new String[] { "-v", "-sdb:src/test/resources/SDB",
                 "-c:src/main/resources/config.xml",
-                "src/main/java/org/codefirst/sapid/App.java" });
+                "src/test/resources/test/Test1.java" });
         System.out.println("end");
     }
 }
