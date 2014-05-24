@@ -28,14 +28,12 @@ public class UseStringMethod extends AbstractJxRule {
             if (dotExpr.getSort() != JxExpression.Sort.DOT) {
                 continue;
             }
-            JxExpression reciever = dotExpr.getChildren(JxExpression.class)
-                    .first();
+            JxExpression reciever = first(dotExpr.getChildren(JxExpression.class));
             if (reciever == null
                     || reciever.getSort() != JxExpression.Sort.VAR_REF) {
                 continue;
             }
-            JxIdentifier ident = reciever.getChildren(JxIdentifier.class)
-                    .first();
+            JxIdentifier ident = first(reciever.getChildren(JxIdentifier.class));
             if (ident == null) {
                 continue;
             }
@@ -44,11 +42,17 @@ public class UseStringMethod extends AbstractJxRule {
             if (def == null || !(def instanceof AJxNodeObject)) {
                 continue;
             }
-            JxType type = ((AJxNodeObject) def).getDescendants(JxType.class)
-                    .first();
+            JxType type = first(((AJxNodeObject) def).getDescendants(JxType.class));
             if (String.class.getCanonicalName().equals(type.getFqnAsString())) {
                 addViolation(newViolation((AJxNodeObject) expr));
             }
         }
+    }
+
+    protected <T> T first(SortedSet<T> set) {
+        if (set.isEmpty()) {
+            return null;
+        }
+        return set.first();
     }
 }
